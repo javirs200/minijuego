@@ -39,42 +39,33 @@ document.addEventListener('keyup', function(event) {
   }
 });
 
-document.addEventListener('keyup', function(event) {
-  switch (event.keyCode) {
-    case 65: // A
-      movement.left = false;
-      break;
-    case 87: // W
-      movement.up = false;
-      break;
-    case 68: // D
-      movement.right = false;
-      break;
-    case 83: // S
-      movement.down = false;
-      break;
-  }
-});
-
 
 socket.emit('new player');
 setInterval(function() {
   socket.emit('movement', movement);
 }, 1000 / 60);
-
 var canvas = document.getElementById('canvas');
-canvas.width = 800;
-canvas.height = 600;
+this.canvas.width = window.innerWidth;
+this.canvas.height = window.innerHeight;
+console.log(canvas);
 var context = canvas.getContext('2d');
 socket.on('state', function(players) {
-  console.log(players);
-  context.clearRect(0, 0, 800, 600);
-  context.fillStyle = 'green';
+  //fondo blanco
+  context.clearRect(0, 0, window.outerWidth, window.innerHeight);
+  context.fillStyle = 'white';
+  //bolas de todos los jugadores
   for (var id in players) {
     var player = players[id];
+    context.fillStyle = player.color;
     context.beginPath();
-    context.arc(player.x, player.y, 10, 0, 2 * Math.PI);
+    context.arc(player.x, player.y, 20, 0, 2 * Math.PI);
     context.fill();
+    //buelvo a color blanco por si hay errores
+    context.fillStyle = 'white';
   }
 });
 
+window.addEventListener('resize',function(e){
+this.canvas.width = window.innerWidth;
+this.canvas.height = window.innerHeight;
+});
