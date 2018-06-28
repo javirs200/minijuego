@@ -3,7 +3,7 @@ module.exports = function (io) {
     var players = {};
     io.on('connection', function (socket) {
         socket.on('new player', function () {
-            console.log('player connected [ ' + socket.id + ' ] ');
+            //console.log('player connected [ ' + socket.id + ' ] ');
             players[socket.id] = {
                 x: 100,
                 y: 100,
@@ -28,7 +28,7 @@ module.exports = function (io) {
 
         socket.on('disconnect', function () {
             players[socket.id] = {};
-            console.log('player disconnected [ ' + socket.id + ' ] ');
+            //console.log('player disconnected [ ' + socket.id + ' ] ');
         });
     });
 

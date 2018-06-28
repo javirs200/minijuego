@@ -47,7 +47,7 @@ setInterval(function() {
 var canvas = document.getElementById('canvas');
 this.canvas.width = window.innerWidth;
 this.canvas.height = window.innerHeight;
-console.log(canvas);
+//console.log(canvas);
 var context = canvas.getContext('2d');
 socket.on('state', function(players) {
   //fondo blanco
