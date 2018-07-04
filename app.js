@@ -11,7 +11,8 @@ app.get('/', function(request, response) {
 });
 
 app.get('/gametable', function(request, response) {
-  response.sendFile(path.join(__dirname, '/client/gametable.html'));
+ // response.sendFile(path.join(__dirname, '/client/gametable.html'));
+  response.sendFile(path.join(__dirname, '/client/gametable-rotacion.html'));
 });
 
 module.exports = app;

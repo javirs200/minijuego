@@ -3,22 +3,29 @@
 <head>
   <title>A Multiplayer Game</title>
   <style>
-    .main{
+    .main {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       text-align: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-size: 35px;
+      font-size: 50px;
       position: relative;
       width: 100%;
       height: 100%;
     }
 
-    .fila{
+    .fila {
       position: relative;
       height: 25%;
       width: 100%;
     }
 
     .vertical {
+      font-size: 50px;
       height: 25%;
       width: 100%;
       background-color: dodgerblue;
@@ -26,6 +33,7 @@
     }
 
     .derecho {
+      font-size: 50px;
       position: absolute;
       height: 100%;
       width: 50%;
@@ -33,7 +41,9 @@
       background-color: cornflowerblue;
       border: 2px solid blue;
     }
+
     .izquierdo {
+      font-size: 50px;
       position: absolute;
       height: 100%;
       width: 50%;
@@ -47,15 +57,15 @@
 
 <body>
   <div class="main">
-    <div class="vertical" id="1">ARRIBA</div>
+    <button class="vertical" id="1">ARRIBA</button>
     <div class="fila">
-        <div class="izquierdo" id="3">IZQUIERDA</div>
-        <div class="derecho" id="4">DERECHA</div>
+      <button class="izquierdo" id="3">IZQUIERDA</button>
+      <button class="derecho" id="4">DERECHA</button>
     </div>
-    <div class="vertical" id="2">ABAJO</div>
+    <button class="vertical" id="2">ABAJO</button>
   </div>
 
-  
+
 
 </body>
 <script src="/static/touchgame.js"></script>

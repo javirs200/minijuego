@@ -7,22 +7,25 @@ module.exports = function (io) {
             players[socket.id] = {
                 x: 100,
                 y: 100,
+                angle:0,
                 color: getRandomColor()
             };
         });
         socket.on('movement', function (data) {
             var player = players[socket.id] || {};
             if (data.left) {
-                player.x -= 5;
+                player.angle -= 5 * Math.PI / 180;
             }
             if (data.up) {
-                player.y -= 5;
+                player.x += 5 * Math.sin(player.angle);
+                player.y -= 5 * Math.cos(player.angle);
             }
             if (data.right) {
-                player.x += 5;       
+                player.angle += 5 * Math.PI / 180;
             }
             if (data.down) {
-                player.y += 5;
+                player.x += -5 * Math.sin(player.angle);
+                player.y -= -5 * Math.cos(player.angle);
             }
         });
 
