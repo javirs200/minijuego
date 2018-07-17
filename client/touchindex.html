@@ -28,8 +28,9 @@
       font-size: 50px;
       height: 25%;
       width: 100%;
-      background-color: dodgerblue;
-      border: 2px solid blue;
+      background-color: slategrey;
+      border: 5px solid steelblue;
+      border-radius: 15px;
     }
 
     .derecho {
@@ -38,8 +39,9 @@
       height: 100%;
       width: 50%;
       right: 0px;
-      background-color: cornflowerblue;
-      border: 2px solid blue;
+      background-color: grey;
+      border: 5px solid steelblue;
+      border-radius: 15px;
     }
 
     .izquierdo {
@@ -48,8 +50,9 @@
       height: 100%;
       width: 50%;
       left: 0px;
-      background-color: cornflowerblue;
-      border: 2px solid blue;
+      background-color: grey;
+      border: 5px solid steelblue;
+      border-radius: 15px;
     }
   </style>
   <script src="/socket.io/socket.io.js"></script>
@@ -57,12 +60,12 @@
 
 <body>
   <div class="main">
-    <button class="vertical" id="1">ARRIBA</button>
+    <button class="vertical" id="1">MARCHA ATRAS</button>
     <div class="fila">
       <button class="izquierdo" id="3">IZQUIERDA</button>
       <button class="derecho" id="4">DERECHA</button>
     </div>
-    <button class="vertical" id="2">ABAJO</button>
+    <button class="vertical" id="2">ACELLERAR</button>
   </div>
 
 
