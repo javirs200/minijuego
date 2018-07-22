@@ -8,7 +8,7 @@ module.exports = function (io) {
                 x: 100,
                 y: 100,
                 angle:0,
-                color: getRandomColor()
+                //color: getRandomColor()
             };
         });
         socket.on('movement', function (data) {
@@ -39,13 +39,13 @@ module.exports = function (io) {
         io.sockets.emit('state', players);
     }, 1000 / 60);
 
-    function getRandomColor() {
+    /*function getRandomColor() {
         var letters = '0123456789ABCDEF';
         var color = '#';
         for (var i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
-    }
+    }*/
 
 }
