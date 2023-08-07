@@ -3,4 +3,4 @@ minijuego web
 
 app para node js  utilizando express
 
-prueba de sokcets y partida comun
+prueba de sockets y partida comun
